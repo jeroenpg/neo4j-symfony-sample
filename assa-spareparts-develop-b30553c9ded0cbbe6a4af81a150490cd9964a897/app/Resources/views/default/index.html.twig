@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="root"></div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        window.URLS = window.URLS || {};
+        window.URLS.graphql = '{{ path('youshido_graphql_graphql_default') }}';
+        window.URLS.home = '{{ path('homepage') }}';
+    </script>
+    <script src="{{ asset('build/app.js') }}"></script>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/tags_style.css') }}"  />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+    <style>
+        * {
+            font-family: 'Roboto' !important;
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .content {
+            position:relative;
+            padding: 5px;
+        }
+
+        .parts {
+            padding: 10px;
+        }
+
+        .parts-wrapper {
+            position: absolute;
+            left: 150px;
+            top: 0;
+            right: 0;
+        }
+
+        .categories {
+            position: absolute;
+            left: 0;
+            width: 150px;
+            top: 0;
+            padding-top: 10px;
+        }
+
+        .category {
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .category:hover {
+            background-color: #d8e2ff;
+        }
+
+        .part {
+            margin-bottom: 10px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .part:hover {
+            background-color: #d8e2ff;
+        }
+
+        .react-tagsinput-input {
+            width:160px;
+        }
+
+        .react-tagsinput--focused {
+            border-color: #0096ca;
+        }
+
+        .react-tagsinput-tag {
+            border-color: #0096ca;
+            background-color: #7fbcd1;
+            color:white;
+            font-weight: bold;
+        }
+    </style>
+{% endblock %}
